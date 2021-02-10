@@ -1,0 +1,32 @@
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+# Complete the minimumSwaps function below.
+def minimumSwaps(arr):
+    count = 0
+    for i in range(len(arr)-1):
+        if arr[i] != i+1:
+            ind = arr.index(i+1)
+            arr.insert(i,arr.pop(ind))
+            arr.insert(ind,arr.pop(i+1))
+            #print(arr)
+            count += 1
+    
+    return count
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    n = int(input())
+
+    arr = list(map(int, input().rstrip().split()))
+
+    res = minimumSwaps(arr)
+
+    fptr.write(str(res) + '\n')
+
+    fptr.close()
