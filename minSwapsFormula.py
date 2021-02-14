@@ -43,9 +43,10 @@ def minSwaps(arr):
         # add it to ans
         cycle_size = 0
         j = i
-         
+        print(vis[j])
+        # run through vis until True
         while not vis[j]:
-             
+            
             # mark node as visited
             vis[j] = True
              
@@ -62,7 +63,7 @@ def minSwaps(arr):
     return ans
 
 #arr = [1, 5, 4, 3, 2]
-arr = [1,3,5,2,4,6,7]
+#arr = [1,3,5,2,4,6,7]
 #arr = [4,3,1,2]
 #arr = [2,3,4,1,5]
 arr = [3,7,6,9,1,8,10,4,2,5]
